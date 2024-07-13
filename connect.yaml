@@ -1,0 +1,22 @@
+input:
+  kafka:
+    addresses:
+      - localhost:9092
+    topics:
+      - kafka-nats 
+    consumer_group: kafka-nats
+
+pipeline:
+  processors:
+    - sleep:
+        duration: 50ms
+    - mapping: |
+        root.company = this.data.company.name
+        root.name = this.data.company.contactperson.name
+        root.email = this.data.company.contactperson.email.hash("sha256")
+        root.orderdate = this.data.dateoforder
+
+output:
+  nats_jetstream:
+    urls: [ "nats://127.0.0.1:4222" ]
+    subject: "kafka-nats"
