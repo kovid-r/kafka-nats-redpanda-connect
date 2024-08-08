@@ -133,7 +133,7 @@ input:
       - localhost:9092
     topics:
       - kafka-nats 
-    consumer_group: kafka-nats-cg
+    consumer_group: kafka-nats-group
 
 pipeline:
   processors:
