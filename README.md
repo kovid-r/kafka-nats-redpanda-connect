@@ -2,7 +2,7 @@
 
 Redpanda Connect is a stateless config-based stream processing tool with filtering, transformation, and enrichment capabilities, and it allows you to work with multiple sources and sinks. In this article, we'll use it to get data from Kafka and pass it to NATS JetStream. The following architecture diagram depicts the flow of data from Kafka to NATS JetStream via Redpanda Connect:
 
-![Connecting Apache Kafka and NATS using Redpanda Connect - Image by author](https://i.imgur.com/MRLmQfg.png)
+![Connecting Apache Kafka and NATS using Redpanda Connect - Image by author](https://i.imgur.com/dIesh27.png)
 
 To reiterate, here are the three critical components in the above diagram:
 
@@ -194,6 +194,11 @@ You can also see the summary of all these messages from NATS using the following
 
 ```shell
 nats stream report
+```
+
+The command above has the following output:
+
+```shell
 Obtaining Stream stats
 
 ╭───────────────────────────────────────────────────────────────────────────────────────────────╮
